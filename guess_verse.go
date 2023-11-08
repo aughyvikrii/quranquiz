@@ -51,7 +51,7 @@ func GuessVerse(amount int, chapters ...int) (quizzes []Quiz, err error) {
 
 		options := []Option{
 			{
-				Text:    GetSurahName(nextVerse.ChapterID),
+				Text:    nextVerse.TextUthmani,
 				Correct: true,
 				VerseID: nextVerse.ID,
 			},
