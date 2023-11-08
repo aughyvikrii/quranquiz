@@ -1,14 +1,16 @@
 package quranquiz
 
 import (
+	"embed"
 	"encoding/json"
-	"os"
 )
+
+//go:embed quran.json
+var fileJSON embed.FS
 
 var QURAN Quran
 
 func init() {
-	file, _ := os.ReadFile("quran.json")
-
+	file, _ := fileJSON.ReadFile("quran.json")
 	_ = json.Unmarshal([]byte(file), &QURAN)
 }
