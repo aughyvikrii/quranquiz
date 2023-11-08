@@ -35,9 +35,10 @@ type Option struct {
 }
 
 type Quiz struct {
-	Question  string `json:"question"`
-	ChapterID int    `json:"chapter_id,omitempty"`
-	VerseID   int    `json:"verse_id,omitempty"`
+	Question      string `json:"question"`
+	ChapterID     int    `json:"chapter_id,omitempty"`
+	VerseID       int    `json:"verse_id,omitempty"`
+	CorrectAnswer int    `json:"correct_answer"`
 
 	Options []Option `json:"options"`
 }

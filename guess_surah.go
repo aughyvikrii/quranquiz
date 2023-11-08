@@ -57,11 +57,20 @@ func GuessSurah(amount int, chapters ...int) (quizzes []Quiz, err error) {
 
 		randomOptions(options)
 
+		correctAnswer := 0
+
+		for i := range options {
+			if options[i].Correct {
+				correctAnswer = i
+				break
+			}
+		}
 		quiz = Quiz{
-			Question:  question.TextUthmani,
-			VerseID:   question.ID,
-			ChapterID: question.ChapterID,
-			Options:   options,
+			Question:      question.TextUthmani,
+			VerseID:       question.ID,
+			ChapterID:     question.ChapterID,
+			CorrectAnswer: correctAnswer,
+			Options:       options,
 		}
 
 		return quiz, nil

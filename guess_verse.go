@@ -71,11 +71,21 @@ func GuessVerse(amount int, chapters ...int) (quizzes []Quiz, err error) {
 
 		randomOptions(options)
 
+		correctAnswer := 0
+
+		for i := range options {
+			if options[i].Correct {
+				correctAnswer = i
+				break
+			}
+		}
+
 		quiz = Quiz{
-			Question:  questionVerse.TextUthmani,
-			VerseID:   questionVerse.ID,
-			ChapterID: questionVerse.ChapterID,
-			Options:   options,
+			Question:      questionVerse.TextUthmani,
+			VerseID:       questionVerse.ID,
+			ChapterID:     questionVerse.ChapterID,
+			CorrectAnswer: correctAnswer,
+			Options:       options,
 		}
 
 		return quiz, nil
