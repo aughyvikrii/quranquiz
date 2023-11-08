@@ -5,7 +5,7 @@ repository ini adalah versi bahasa pemrograman go dari repository https://github
 ## Installation
 
 ```bash
-go get github.com/aughyvikrii/quran-quiz
+go get github.com/aughyvikrii/quranquiz
 ```
 
 ## Example
@@ -14,16 +14,16 @@ go get github.com/aughyvikrii/quran-quiz
 import (
   "fmt"
 
-  quranquizz "github.com/aughyvikrii/quran-quiz"
+  "github.com/aughyvikrii/quranquiz"
 )
 
 func main() {
 
   /** generate 1 random quiz guess by surah from any chapter */
-  quizzes, err := quranquizz.GuessSurah(1)
+  quizzes, err := quranquiz.GuessSurah(1)
 
   /** generate 2 random quiz guess by surah chapter (1, 2, 3, 4) */
-  quizzes, err := quranquizz.GuessSurah(2, 1, 2, 3, 4)
+  quizzes, err := quranquiz.GuessSurah(2, 1, 2, 3, 4)
 }
 ```
 
