@@ -36,7 +36,7 @@ func GuessSurah(amount int, chapters ...int) (quizzes []Quiz, err error) {
 
 		options := []Option{
 			{
-				Text:      getSurahName(question.ChapterID),
+				Text:      GetSurahName(question.ChapterID),
 				Correct:   true,
 				ChapterID: question.ChapterID,
 			},
@@ -49,7 +49,7 @@ func GuessSurah(amount int, chapters ...int) (quizzes []Quiz, err error) {
 			}
 
 			options = append(options, Option{
-				Text:      getSurahName(chapterID),
+				Text:      GetSurahName(chapterID),
 				Correct:   false,
 				ChapterID: chapterID,
 			})

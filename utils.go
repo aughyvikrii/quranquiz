@@ -95,10 +95,10 @@ func getSurahByVerseID(verseID int) (int, string, error) {
 		return 0, "", errors.New("ayat tidak ditemukan")
 	}
 
-	return verse.ChapterID, getSurahName(verse.ChapterID), nil
+	return verse.ChapterID, GetSurahName(verse.ChapterID), nil
 }
 
-func checkSurahName(chapterID int) (string, error) {
+func CheckSurahName(chapterID int) (string, error) {
 	if chapterID < 1 || chapterID > 114 {
 		return "", errors.New("nomor surah tidak valid")
 	}
@@ -106,8 +106,8 @@ func checkSurahName(chapterID int) (string, error) {
 	return QURAN.Surah[chapterID-1].Name, nil
 }
 
-func getSurahName(chapterID int) string {
-	surahName, _ := checkSurahName(chapterID)
+func GetSurahName(chapterID int) string {
+	surahName, _ := CheckSurahName(chapterID)
 	return surahName
 }
 
